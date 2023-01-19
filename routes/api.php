@@ -19,3 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('articles', 'App\Http\Controllers\ArticleController');
+
+Route::get('/', function () {
+    return response()->json("Back-end Challenge 2021 🏅 - Space Flight News", 200);
+});
+
