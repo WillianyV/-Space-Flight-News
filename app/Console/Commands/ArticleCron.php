@@ -33,6 +33,7 @@ class ArticleCron extends Command
     {
         $all_articles = Http::get("https://api.spaceflightnewsapi.net/v3/articles");
         $articles = json_decode($all_articles);
+        //Os launches e events estão vindo vazios.
 
         foreach ($articles as $article) {
             if (!(Article::where('title', $article->title)->exists())) {

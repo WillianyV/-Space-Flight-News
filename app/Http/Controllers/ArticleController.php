@@ -84,13 +84,13 @@ class ArticleController extends Controller
         //remove a imagem antiga caso uma nova imagem tenha sido enviado no request
         if($request->file('imageUrl')) {
             Storage::disk('public')->delete($article->imageUrl);
-
-            $image = $request->file('imageUrl');
-            $imageUrl = $image->store('image/articles', 'public');
-            $data['imageUrl'] = $imageUrl;
         }
 
-        $article->update($request->all());
+        $image = $request->file('imageUrl');
+        $imageUrl = $image->store('image/articles', 'public');
+        $data['imageUrl'] = $imageUrl;
+
+        $article->update($data);
 
         return response()->json($article, 200);
     }
