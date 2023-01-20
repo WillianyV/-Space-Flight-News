@@ -32,9 +32,7 @@ class Article extends Model
             'imageUrl' => 'required|file|mimes:png,jpeg,jpg',
             'newsSite' => 'required',
             'summary' => 'required',
-            'publishedAt' => 'required',
-            'launche_id' => 'exists:launches,id',
-            'event_id' => 'exists:events,id'
+            'publishedAt' => 'required'
         ];
     }
 }
