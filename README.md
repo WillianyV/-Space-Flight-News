@@ -37,7 +37,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-PHP, Composer, Postman.
+PHP, Composer.
 
 ---
 
