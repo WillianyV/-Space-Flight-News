@@ -14,6 +14,6 @@ class LauncheSeeder extends Seeder
      */
     public function run()
     {
-        Launche::create(['provider' => 'Cultura']);
+        Launche::create(['provider' => 'Spaceflight News']);
     }
 }

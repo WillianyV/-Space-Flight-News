@@ -15,6 +15,6 @@ class EventSeeder extends Seeder
      */
     public function run()
     {
-        Event::create(['provider' => 'Livraria Cultura']);
+        Event::create(['provider' => 'Spaceflight News']);
     }
 }
