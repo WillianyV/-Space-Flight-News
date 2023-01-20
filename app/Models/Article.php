@@ -29,7 +29,7 @@ class Article extends Model
             'featured' => 'required',
             'title' => 'required',
             'url' => 'required',
-            'imageUrl' => 'required',
+            'imageUrl' => 'required|file|mimes:png,jpeg,jpg',
             'newsSite' => 'required',
             'summary' => 'required',
             'publishedAt' => 'required',

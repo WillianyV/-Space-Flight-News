@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use \Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
@@ -34,7 +36,13 @@ class ArticleController extends Controller
     {
         $request->validate($this->article->rules());
 
-        $article = $this->article->create($request->all());
+        $data = $request->all();
+
+        $image = $request->file('imageUrl');
+        $imageUrl = $image->store('image/articles', 'public');
+        $data['imageUrl'] = $imageUrl;
+
+        $article = $this->article->create($data);
 
         return response()->json($article, 201);
     }
@@ -71,6 +79,17 @@ class ArticleController extends Controller
         }
 
         $request->validate($article->rules());
+        $data = $request->all();
+
+        //remove a imagem antiga caso uma nova imagem tenha sido enviado no request
+        if($request->file('imageUrl')) {
+            Storage::disk('public')->delete($article->imageUrl);
+
+            $image = $request->file('imageUrl');
+            $imageUrl = $image->store('image/articles', 'public');
+            $data['imageUrl'] = $imageUrl;
+        }
+
         $article->update($request->all());
 
         return response()->json($article, 200);
