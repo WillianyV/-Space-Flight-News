@@ -41,6 +41,14 @@ PHP, Composer, Postman.
 
 ---
 
+## Processo de investigação
+
+- Apredendo como criar um Banco de Dados gratuíto no [Heroku](https://www.youtube.com/watch?v=CrSLbdk6PqI).
+- [Criando uma Cron](https://dev.to/alexandrefreire/como-criar-um-cron-no-laravel-dd2) + [Scheduling](https://laravel.com/docs/9.x/scheduling)
+- [Error 60 SSL Certificate](https://medium.com/@narendravaghela/how-to-fix-curl-error-60-ssl-certificate-problem-80e7dafafa57)
+
+---
+
 ## Coodesh
 
 This is a challenge by Coodesh
