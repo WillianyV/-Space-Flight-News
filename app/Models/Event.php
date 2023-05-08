@@ -9,5 +9,12 @@ class Event extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['provider'];
+    protected $fillable = ['id','provider'];
+
+    /**
+     * Indicates if the model's ID is auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = false;
 }

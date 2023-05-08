@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use \Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
@@ -22,7 +21,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $response = $this->article->with(['launche','event'])->paginate(15);
+        $response = $this->article->with(['launches','events'])->paginate(15);
         return response()->json($response, 200);
     }
 
@@ -55,7 +54,7 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $article = $this->article->with(['launche','event'])->find($id);
+        $article = $this->article->with(['launches','events'])->find($id);
         if($article === null) {
             return response()->json(['erro' => 'Recurso pesquisado não existe'], 404) ;
         }

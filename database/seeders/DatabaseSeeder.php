@@ -15,10 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            EventSeeder::class,
-            LauncheSeeder::class
-        ]);
+        // $this->call([
+        //     EventSeeder::class,
+        //     LauncheSeeder::class
+        // ]);
     }
 
 }
